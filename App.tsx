@@ -89,7 +89,8 @@ const App: React.FC = () => {
 
     if (activeSession.code !== MASTER_ADMIN_CODE) {
       try {
-        await axios.post('/api/save-design', { code: activeSession.code, designLayout: layout });
+        const apiUrl = `${window.location.origin}/api/save-design`;
+        await axios.post(apiUrl, { code: activeSession.code, designLayout: layout });
       } catch (error) {
         console.error("Failed to save design:", error);
         // Optionally notify user, but proceed for now

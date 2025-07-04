@@ -199,7 +199,8 @@ export const PhotoScreen: React.FC<PhotoScreenProps> = ({ imageDataUrls, onRetak
     setSendStatus('sending');
 
     try {
-        await axios.post('/api/send-photo', {
+        const apiUrl = `${window.location.origin}/api/send-photo`;
+        await axios.post(apiUrl, {
             email: email,
             imageDataUrl: compositeImage,
             code: session.code,

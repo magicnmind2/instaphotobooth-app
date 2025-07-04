@@ -48,6 +48,7 @@ const KonvaElementNode: React.FC<{
     onUpdate: (attrs: Partial<DesignElement>) => void;
 }> = ({ element, onSelect, onUpdate }) => {
     const [image, setImage] = useState<HTMLImageElement | null>(null);
+    const shapeRef = useRef<Konva.Text | Konva.Image>(null);
 
     useEffect(() => {
         if (element.type === 'image') {
@@ -61,6 +62,7 @@ const KonvaElementNode: React.FC<{
     if (element.type === 'text') {
         return (
             <Text
+                ref={shapeRef as React.Ref<Konva.Text>}
                 {...element}
                 draggable
                 onClick={onSelect}
@@ -68,7 +70,6 @@ const KonvaElementNode: React.FC<{
                 onTransformEnd={(e) => {
                     const node = e.target as Konva.Text;
                     const scaleX = node.scaleX();
-                    // update state with new size and scale
                     onUpdate({
                         x: node.x(),
                         y: node.y(),
@@ -86,6 +87,7 @@ const KonvaElementNode: React.FC<{
     if (element.type === 'image' && image) {
         return (
             <KonvaImage
+                ref={shapeRef as React.Ref<Konva.Image>}
                 {...(element as ImageElement)}
                 image={image}
                 draggable
@@ -109,8 +111,6 @@ export const DesignStudio: React.FC<DesignStudioProps> = ({ onSave, existingLayo
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const stageRef = useRef<Konva.Stage>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
-
-    const selectedElement = elements.find(el => el.id === selectedId);
 
     const checkDeselect = (e: Konva.KonvaEventObject<MouseEvent | TouchEvent>) => {
         const clickedOnEmpty = e.target === e.target.getStage();
@@ -174,7 +174,10 @@ export const DesignStudio: React.FC<DesignStudioProps> = ({ onSave, existingLayo
         onSave({ elements });
     }
 
+    const selectedKonvaNode = stageRef.current?.findOne(`#${selectedId}`);
+
     const renderPropertiesPanel = () => {
+        const selectedElement = elements.find(el => el.id === selectedId);
         if (!selectedElement) return null;
 
         return (
@@ -244,7 +247,7 @@ export const DesignStudio: React.FC<DesignStudioProps> = ({ onSave, existingLayo
                                     onUpdate={(attrs) => updateElement(element.id, attrs)}
                                 />
                             ))}
-                            <ElementTransformer selectedNode={stageRef.current?.findOne('#' + selectedId)} />
+                            <ElementTransformer selectedNode={selectedKonvaNode} />
                         </Layer>
                     </Stage>
                 </div>

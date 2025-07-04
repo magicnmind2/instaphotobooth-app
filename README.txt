@@ -1,5 +1,7 @@
 # InstaPhotoBooth - Business & Operations Guide
 
+**Important Note on AI Studio Previews:** Due to the complexity of this application (secure payments, camera access, advanced graphics), it is **expected to show a blank/black screen** in the AI Studio preview window. This is not an error. The app must be deployed to a real web host like Vercel to function correctly. **Please follow the deployment steps below to see your live, working application.**
+
 Congratulations on your new InstaPhotoBooth business! This guide is your single source of truth for setting up, running, and updating your application. It is designed for a non-technical user.
 
 ## Table of Contents
@@ -65,8 +67,20 @@ This is the new, easier way to get your code on GitHub using their official desk
 
 5.  **Add Your Project Files**:
     *   Find the `.zip` file you downloaded from AI Studio and unzip it.
-    *   Open the unzipped folder. You should see all the files and folders (`api`, `components`, `index.html`, etc.).
-    *   Select **all** of these files and folders and drag them directly into the `instaphotobooth-app` folder that GitHub Desktop just created.
+    *   Open the unzipped folder. You should see all the files and folders.
+    *   **File Structure Checklist**: Before you drag, ensure your unzipped folder contains the following:
+        *   `api` (folder with 6 files inside)
+        *   `components` (folder with 9 files inside)
+        *   `App.tsx`
+        *   `constants.ts`
+        *   `index.html`
+        *   `index.tsx`
+        *   `metadata.json`
+        *   `package.json`
+        *   `README.md`
+        *   `README.txt`
+        *   `types.ts`
+    *   Select **all** of these items and drag them directly into the `instaphotobooth-app` folder that GitHub Desktop just created.
 
 6.  **Upload (Commit & Push) Your Files**:
     *   Go back to the GitHub Desktop application. It will now show a list of all the files you just added.
