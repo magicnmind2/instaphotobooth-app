@@ -69,8 +69,8 @@ This is the new, easier way to get your code on GitHub using their official desk
     *   Find the `.zip` file you downloaded from AI Studio and unzip it.
     *   Open the unzipped folder. You should see all the files and folders.
     *   **File Structure Checklist**: Before you drag, ensure your unzipped folder contains the following:
-        *   `api` (folder with 5 files inside: `activate.ts`, `checkout.ts`, `email.ts`, `save-design.ts`, `send-photo.ts`, `stripe-webhook.ts`, `stripe.ts`, `verify-purchase.ts`)
-        *   `components` (folder with 7 files inside: `ActivationScreen.tsx`, `DesignStudio.tsx`, `icons.tsx`, `LandingScreen.tsx`, `PhotoScreen.tsx`, `PreviewScreen.tsx`, `PurchaseSuccessScreen.tsx`, `SalesPage.tsx`, `SessionExpiredScreen.tsx`, `Timer.tsx`)
+        *   `api` (folder with 7 files inside: `activate.ts`, `checkout.ts`, `email.ts`, `helpers.ts`, `save-design.ts`, `send-photo.ts`, `stripe-webhook.ts`, `stripe.ts`, `verify-purchase.ts`)
+        *   `components` (folder with 9 files inside: `ActivationScreen.tsx`, `DesignStudio.tsx`, `icons.tsx`, `LandingScreen.tsx`, `PhotoScreen.tsx`, `PreviewScreen.tsx`, `PurchaseSuccessScreen.tsx`, `SalesPage.tsx`, `SessionExpiredScreen.tsx`, `Timer.tsx`)
         *   `App.tsx`
         *   `constants.ts`
         *   `index.html`
