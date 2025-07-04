@@ -19,7 +19,6 @@ sgMail.setApiKey(SENDGRID_API_KEY);
 interface PhotoEmailArgs {
   to: string;
   imageDataUrl: string; // This will be uploaded and a URL will be created.
-  logoUrl?: string;
 }
 
 // In a real-world scenario, you would upload the image to a CDN (like Cloudinary, S3)
@@ -33,7 +32,7 @@ const uploadImageToCDN = async (imageDataUrl: string): Promise<string> => {
   return imageDataUrl; // For this demo, we pass the data URI directly.
 };
 
-export const sendPhotoByEmail = async ({ to, imageDataUrl, logoUrl }: PhotoEmailArgs) => {
+export const sendPhotoByEmail = async ({ to, imageDataUrl }: PhotoEmailArgs) => {
   // 1. Create the final composite image on the backend
   // This is more robust than client-side compositing.
   const finalImage = imageDataUrl; // For now, we assume the client sends the final composite.

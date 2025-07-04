@@ -42,61 +42,39 @@ This application is designed to be extremely cost-effective, especially when sta
 
 ## Step 0: Getting Your Code on GitHub (One-Time Setup)
 
-Before you can deploy your site on Vercel, you need a central place to store your code. We will use GitHub for this. This process involves manually copying and pasting each file from our AI Studio conversation into a new file in your GitHub repository. It's important to get the file names and folder structure exactly right.
+This is the new, easier way to get your code on GitHub using their official desktop app. This avoids creating every file by hand.
 
-1.  **Create a GitHub Account**: Go to https://github.com and sign up for a free account.
-2.  **Create a New Repository**:
+1.  **Create a GitHub Account**: If you haven't already, go to https://github.com and sign up for a free account.
+
+2.  **Create a New (Empty) Repository on GitHub.com**:
     *   On your GitHub homepage, click the `+` icon in the top right and select "New repository".
     *   Give it a simple name, like `instaphotobooth-app`.
     *   Make sure it is set to **Public**.
+    *   **Do not** check any boxes to add a README, .gitignore, or license. We need it to be completely empty.
     *   Click "Create repository".
-3.  **Upload All Files**: From your new repository page, you will now create every file and folder for the project.
-    *   Click the "Add file" button and choose "Create new file".
-    *   In the file name box, type `index.html`.
-    *   Go to our AI Studio conversation, copy the complete code for `index.html`, and paste it into the editor on GitHub.
-    *   Click "Commit new file".
-    *   **Repeat this process for every single file.**
-    *   **For files in folders (like `components/` or `api/`)**: When you "Create new file", type the folder name first, then a slash `/`, then the file name. For example: `components/ActivationScreen.tsx`. GitHub will automatically create the folder for you.
 
-### File Structure Checklist
+3.  **Download and Install GitHub Desktop**:
+    *   Go to https://desktop.github.com/ and download the free, official application for your computer.
+    *   Install and open it. Log in with the GitHub account you just created.
 
-Use this checklist to ensure you have created all the necessary files and folders.
+4.  **Clone Your Empty Repository**:
+    *   In GitHub Desktop, go to `File` > `Clone Repository...`.
+    *   You should see your `instaphotobooth-app` repository in the list. Select it.
+    *   Choose a location on your computer to save the project files (the `Documents/GitHub` folder is a good default).
+    *   Click the "Clone" button. This will create a new, empty folder on your computer that is linked to your online repository.
 
-**Root Folder:**
-- `App.tsx`
-- `index.html`
-- `index.tsx`
-- `metadata.json`
-- `package.json`
-- `README.md`
-- `constants.ts`
-- `types.ts`
+5.  **Add Your Project Files**:
+    *   Find the `.zip` file you downloaded from AI Studio and unzip it.
+    *   Open the unzipped folder. You should see all the files and folders (`api`, `components`, `index.html`, etc.).
+    *   Select **all** of these files and folders and drag them directly into the `instaphotobooth-app` folder that GitHub Desktop just created.
 
-**`components/` Folder:**
-- `components/ActivationScreen.tsx`
-- `components/DesignStudio.tsx`
-- `components/icons.tsx`
-- `components/LandingScreen.tsx`
-- `components/PhotoScreen.tsx`
-- `components/PreviewScreen.tsx`
-- `components/PurchaseSuccessScreen.tsx`
-- `components/SalesPage.tsx`
-- `components/SessionExpiredScreen.tsx`
-- `components/Timer.tsx`
+6.  **Upload (Commit & Push) Your Files**:
+    *   Go back to the GitHub Desktop application. It will now show a list of all the files you just added.
+    *   At the bottom left, you will see a "Summary" box. Type a short description like `Initial project setup`.
+    *   Click the blue button that says "Commit to main".
+    *   At the top of the window, click the button that says "Push origin".
 
-**`api/` Folder:**
-- `api/activate.ts`
-- `api/checkout.ts`
-- `api/email.ts`
-- `api/get-session.ts`
-- `api/helpers.ts`
-- `api/save-design.ts`
-- `api/send-photo.ts`
-- `api/stripe.ts`
-- `api/stripe-webhook.ts`
-- `api/verify-purchase.ts`
-
-Once all files are in your GitHub repository and the structure matches this checklist, you are ready for Step 1.
+**That's it!** You have successfully uploaded your entire project to GitHub in one go. You can now refresh your GitHub.com page to see all the files there, and you are ready for Step 1.
 
 ---
 
