@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "A full-stack photobooth kiosk application.",
   "main": "index.js",
-  "scripts": {
-    "dev": "echo 'Run your development server command here'",
-    "build": "echo 'Run your build command here'"
-  },
   "keywords": [
     "react",
     "stripe",
