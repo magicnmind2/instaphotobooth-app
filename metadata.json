@@ -1,0 +1,7 @@
+{
+  "name": "Webcam Photo Booth - Kiosk",
+  "description": "A self-service photo booth kiosk. Purchase a time-based pass, receive an access code, and enjoy a fun, interactive photo session with filters and different photo modes.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
