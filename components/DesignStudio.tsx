@@ -50,20 +50,25 @@ const KonvaElementNode: React.FC<{
     const [image, setImage] = useState<HTMLImageElement | null>(null);
     const shapeRef = useRef<Konva.Text | Konva.Image>(null);
 
+    const type = element.type;
+    const src = type === 'image' ? (element as ImageElement).src : null;
+
     useEffect(() => {
-        if (element.type === 'image') {
+        if (type === 'image' && src) {
             const img = new window.Image();
-            img.src = element.src;
+            img.src = src;
             img.crossOrigin = 'Anonymous';
             img.onload = () => setImage(img);
         }
-    }, [element]);
+    }, [type, src]); // Depend only on type and src to prevent re-loading on move
 
     if (element.type === 'text') {
         return (
             <Text
                 ref={shapeRef as React.Ref<Konva.Text>}
                 {...element}
+                id={element.id}
+                name="element"
                 draggable
                 onClick={onSelect}
                 onTap={onSelect}
@@ -89,6 +94,8 @@ const KonvaElementNode: React.FC<{
             <KonvaImage
                 ref={shapeRef as React.Ref<Konva.Image>}
                 {...(element as ImageElement)}
+                id={element.id}
+                name="element"
                 image={image}
                 draggable
                 onClick={onSelect}
